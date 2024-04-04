@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Square</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    #redSquare {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<div id="redSquare"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var redSquare = document.getElementById('redSquare');
+
+    document.addEventListener("mousemove", function(event) {
+        var mouseX = event.clientX;
+        var mouseY = event.clientY;
+
+        // Move the square 10 pixels above the mouse
+        redSquare.style.left = (mouseX - (redSquare.offsetWidth / 2)) + "px";
+        redSquare.style.top = (mouseY - (redSquare.offsetHeight / 2) - 10) + "px";
+    });
+});
+</script>
+
+</body>
+</html>
